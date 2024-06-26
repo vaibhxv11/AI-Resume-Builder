@@ -5,6 +5,7 @@ import React, { useContext, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import GlobalApi from '../../../../../service/GlobalApi';
 import { Input } from '@/components/ui/input';
+import { toast } from 'sonner';
 function PersonalDetail({enableNext}) {
     const params=useParams();
     const { resumeInfo, setResumeInfo } = useContext(ResumeInfoContext);
@@ -44,6 +45,7 @@ function PersonalDetail({enableNext}) {
             console.log(resp)
             enableNext(true);
             setLoading(false);
+             toast("Derails Updated!")
         } ,(error)=>{
             setLoading(false);
         } )
@@ -61,34 +63,34 @@ function PersonalDetail({enableNext}) {
                 <div className='grid grid-cols-2 mt-5 gap-3 '>
                     <div>
                         <label className='text-sm' >First Name</label>
-                    <Input  name="firstName" required onChange={handleChange}/>
+                    <Input  name="firstName" defaultValue={resumeInfo?.firstName} required onChange={handleChange}/>
                     </div>
 
                     <div>
                         <label className='text-sm' >Last Name</label>
-                    <Input  name="lastName" required onChange={handleChange}/>
+                    <Input  name="lastName" defaultValue={resumeInfo?.lastName} required onChange={handleChange}/>
                     </div>
 
                     <div className='col-span-2'>
                         <label className='text-sm' >Job Title</label>
-                    <Input  name="jobTitle" required onChange={handleChange}/>
+                    <Input  name="jobTitle" defaultValue={resumeInfo?.jobTitle} required onChange={handleChange}/>
                     </div>
 
                     <div className='col-span-2'>
                         <label className='text-sm' >Address</label>
-                    <Input  name="address" required onChange={handleChange}/>
+                    <Input  name="address" defaultValue={resumeInfo?.address} required onChange={handleChange}/>
                     </div>
 
                     
                     <div>
                         <label className='text-sm' >Phone</label>
-                    <Input  name="phone" required onChange={handleChange}/>
+                    <Input  name="phone" defaultValue={resumeInfo?.phone} required onChange={handleChange}/>
                     </div>
 
                     
                     <div>
                         <label className='text-sm' >Email</label>
-                    <Input  name="email" required onChange={handleChange}/>
+                    <Input  name="email" defaultValue={resumeInfo?.email} required onChange={handleChange}/>
                     </div>
 
                     

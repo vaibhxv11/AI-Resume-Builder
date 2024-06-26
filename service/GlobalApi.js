@@ -13,7 +13,7 @@ const axiosClient=axios.create({
   
    const GetUserResumes=(userEmail)=>axiosClient.get('/user-resumes?filters[userEmail][$eq]='+userEmail);
    
-   const UpdateResumeDetail=(id ,data)=>axiosClient.put('/user-resume/'+id   , data)
+   const UpdateResumeDetail=(id ,data)=>axiosClient.put('/user-resumes/'+id  , data)
 
 
    export default{
