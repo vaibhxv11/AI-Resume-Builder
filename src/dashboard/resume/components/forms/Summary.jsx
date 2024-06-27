@@ -17,7 +17,7 @@ function Summary({ enableNext }) {
     const [summary, setSummary] = useState();
     const [loading, setLoading] = useState(false);
     const params = useParams()
-    const [generatedSummaryList , setGeneratedSummaryList]=useState();
+    const [generatedSummaryList , setGeneratedSummaryList]=useState([]);
 
     useEffect(() => {
         summary && setResumeInfo({
@@ -90,7 +90,7 @@ function Summary({ enableNext }) {
             </div>
       
        
-           {   generatedSummaryList && <div>
+           {   generatedSummaryList.length > 0 && <div>
                 <h2 className='font-bold text-lg'>Suggestions</h2>
                 {
                     generatedSummaryList.map((item , index)=>(
