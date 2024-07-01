@@ -12,6 +12,7 @@ function EditResume() {
 
      useEffect(()=>{
       setResumeInfo(dummy)
+      // console.log("params :", params.resumeId)
 
      } , [])
 

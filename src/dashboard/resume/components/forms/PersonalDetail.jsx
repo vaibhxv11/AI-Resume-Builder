@@ -17,13 +17,12 @@ function PersonalDetail({enableNext}) {
         const {name , value}=e.target;
 
          setFormData({
-             ...formData ,
+             ...formData,
              [name]:value
          })
 
         setResumeInfo({
             ...resumeInfo ,
-
             [name]:value
 
         })
@@ -31,21 +30,22 @@ function PersonalDetail({enableNext}) {
 
     }
 
-    const submitHandler=(e)=>{
+    const onSave=(e)=>{
         e.preventDefault() ;
         setLoading(true)
 
         const data={
-            data :formData
+            data:formData
              
         }
+        console.log("data after save:" ,params?.resumeId);
 
 
-        GlobalApi.UpdateResumeDetail(params?.resumeId ,data ).then(resp=>{
-            console.log(resp)
+        GlobalApi.UpdateResumeDetail(params?.resumeId, data ).then(resp=>{
+            console.log(resp.data)
             enableNext(true);
             setLoading(false);
-             toast("Derails Updated!")
+             toast("Details Updated!")
         } ,(error)=>{
             setLoading(false);
         } )
@@ -59,7 +59,7 @@ function PersonalDetail({enableNext}) {
             <h2 className='font-bold text-lg'>Perosonal Details</h2>
             <p>Get Started with the basic information</p>
 
-            <form onSubmit={submitHandler}>
+            <form onSubmit={onSave}>
                 <div className='grid grid-cols-2 mt-5 gap-3 '>
                     <div>
                         <label className='text-sm' >First Name</label>
