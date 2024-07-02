@@ -5,13 +5,13 @@ import { Button } from '@/components/ui/button';
 import { AIChatSession } from '../../../../service/AIModel';
 import { ResumeInfoContext } from '../../../context/ResumeInfoContext';
 import { toast } from 'sonner';
-const PROMPT='position titile: {positionTitle} , Depends on position title give me 5-7 bullet points for my experience in resume , give me result in HTML format'
+const PROMPT='position titile: {positionTitle} , Depends on position title give me 5-7 bullet points for my experience in resume , give me result in HTML bullet format (this is summary of my job role what things i did there)'
 
-function RichTextEditor({onRichTextEditorChange , index , defaultValue}) {
+function RichTextEditor({onRichTextEditorChange , index , defaultValue }) {
 
     
 
-    const [value, setValue] = useState();
+    const [value, setValue] = useState(defaultValue);
     const {resumeInfo , setResumeInfo}=useContext(ResumeInfoContext)
     const [loading   , setLoading]=useState(false);
       
@@ -36,8 +36,6 @@ function RichTextEditor({onRichTextEditorChange , index , defaultValue}) {
 
     }
   
-
-
 
 
     return (
@@ -69,7 +67,7 @@ function RichTextEditor({onRichTextEditorChange , index , defaultValue}) {
               <Separator />
               <BtnNumberedList />
               <BtnBulletList />
-              <Separator />
+              <Separator/>
               <BtnLink />
              
              
