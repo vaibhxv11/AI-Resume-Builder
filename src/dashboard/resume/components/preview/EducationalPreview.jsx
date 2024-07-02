@@ -5,20 +5,20 @@ function EducationalPreview({resumeInfo}) {
     <div className='my-6'>
           <h2 className='text-center font-bold text-sm mb-2  '
           style={{
-            color:resumeInfo?.themeColor
+            color: resumeInfo?.attributes?.themeColor
            }}  > Education</h2>
 
            <hr style={{
-            borderColor:resumeInfo?.themeColor
+            borderColor:resumeInfo?.attributes?.themeColor
            }} 
            />
 
                   {
-                resumeInfo?.education.map((education , index)=>(
+                resumeInfo?.attributes?.education?.map((education , index)=>(
                     <div key={index} className='my-5'>
                         <h2 className='text-sm font-bold '
                         style={{
-                            color:resumeInfo?.themeColor
+                            color:resumeInfo?.attributes?.themeColor
                            }} >
                             {education?.universityName}
                         </h2>

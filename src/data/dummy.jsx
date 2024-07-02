@@ -1,4 +1,10 @@
 export default{
+    id:1 ,
+
+    attributes:{
+
+   
+    
     firstName:'Vaibhav',
     lastName:'Carter',
     jobTitle:'full stack developer',
@@ -65,22 +71,23 @@ export default{
         {
             id:1,
             name:'Angular',
-            rating:80,
+            rating:5,
         },
         {
             id:1,
             name:'React',
-            rating:100,
+            rating:4,
         },
         {
             id:1,
             name:'MySql',
-            rating:80,
+            rating:5,
         },
         {
             id:1,
             name:'React Native',
-            rating:100,
+            rating:3,
         }
     ]
+}
 }

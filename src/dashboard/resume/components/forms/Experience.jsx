@@ -8,20 +8,19 @@ import GlobalApi from './../../../../../service/GlobalApi'
 import { toast } from 'sonner'
 import { LoaderCircle } from 'lucide-react'
 
-const formField = {
-    title: '',
-    companyName: '',
-    city: '',
-    state: '',
-    startDate: '',
-    endDate: '',
-    workSummary: '' 
 
-}
 function Experience() {
 
     const [experienceList, setExperienceList] = useState([
-        formField
+        {
+        title: '',
+        companyName: '',
+        city: '',
+        state: '',
+        startDate: '',
+        endDate: '',
+        workSummary: '' 
+        }
     ])
 
     const {resumeInfo ,setResumeInfo}=useContext(ResumeInfoContext)
@@ -30,7 +29,7 @@ function Experience() {
 
      
     useEffect(()=>{
-        resumeInfo?.Experience?.length > 0 && setExperienceList(resumeInfo?.Experience)
+        resumeInfo && setExperienceList(resumeInfo?.attributes?.experience)
         
     },[])
 
@@ -43,9 +42,20 @@ function Experience() {
 
 
     }
-  
+
      const AddNewExperience=()=>{
-         setExperienceList([...experienceList , formField])
+         setExperienceList([...experienceList , 
+            {
+                title: '',
+                companyName: '',
+                city: '',
+                state: '',
+                startDate: '',
+                endDate: '',
+                workSummary: '' 
+
+            }
+         ])
      }
 
      const RemoveExperience =()=>{
@@ -60,13 +70,10 @@ function Experience() {
 
      }
 
-     useEffect(()=>{
-          console.log(experienceList)
-          setResumeInfo({
-            ...resumeInfo ,
-            experience:experienceList 
-          })
-     } , [experienceList])
+  
+    
+
+     
 
      const onSave=()=>{
         setLoading(true)
@@ -87,6 +94,13 @@ function Experience() {
         })
 
     }
+    useEffect(()=>{
+        console.log(experienceList)
+        setResumeInfo({
+          ...resumeInfo ,
+          experience:experienceList 
+        })
+   } , [experienceList])
 
 
     return (

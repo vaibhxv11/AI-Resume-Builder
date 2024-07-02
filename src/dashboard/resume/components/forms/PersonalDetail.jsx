@@ -63,34 +63,34 @@ function PersonalDetail({enableNext}) {
                 <div className='grid grid-cols-2 mt-5 gap-3 '>
                     <div>
                         <label className='text-sm' >First Name</label>
-                    <Input  name="firstName" defaultValue={resumeInfo?.firstName} required onChange={handleChange}/>
+                    <Input  name="firstName" defaultValue={resumeInfo?.attributes?.firstName} required onChange={handleChange}/>
                     </div>
 
                     <div>
                         <label className='text-sm' >Last Name</label>
-                    <Input  name="lastName" defaultValue={resumeInfo?.lastName} required onChange={handleChange}/>
+                    <Input  name="lastName" defaultValue={resumeInfo?.attributes?.lastName} required onChange={handleChange}/>
                     </div>
 
                     <div className='col-span-2'>
                         <label className='text-sm' >Job Title</label>
-                    <Input  name="jobTitle" defaultValue={resumeInfo?.jobTitle} required onChange={handleChange}/>
+                    <Input  name="jobTitle" defaultValue={resumeInfo?.attributes?.jobTitle} required onChange={handleChange}/>
                     </div>
 
                     <div className='col-span-2'>
                         <label className='text-sm' >Address</label>
-                    <Input  name="address" defaultValue={resumeInfo?.address} required onChange={handleChange}/>
+                    <Input  name="address" defaultValue={resumeInfo?.attributes?.address} required onChange={handleChange}/>
                     </div>
 
                     
                     <div>
                         <label className='text-sm' >Phone</label>
-                    <Input  name="phone" defaultValue={resumeInfo?.phone} required onChange={handleChange}/>
+                    <Input  name="phone" defaultValue={resumeInfo?.attributes?.phone} required onChange={handleChange}/>
                     </div>
 
                     
                     <div>
                         <label className='text-sm' >Email</label>
-                    <Input  name="email" defaultValue={resumeInfo?.email} required onChange={handleChange}/>
+                    <Input  name="email" defaultValue={resumeInfo?.attributes?.email} required onChange={handleChange}/>
                     </div>
 
                     

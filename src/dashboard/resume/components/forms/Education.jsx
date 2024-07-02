@@ -25,8 +25,10 @@ function Education() {
   ])
 
   useEffect(()=>{
-    resumeInfo&&setEducationalList(resumeInfo?.education)
+    resumeInfo && setEducationalList(resumeInfo?.attributes?.education)
   },[])
+
+
   const handleChange=(event,index)=>{
     const newEntries=educationalList.slice();
     const {name,value}=event.target;
@@ -58,7 +60,7 @@ function Education() {
       }
     }
 
-    GlobalApi.UpdateResumeDetail(params.resumeId,data).then(resp=>{
+    GlobalApi.UpdateResumeDetail(params.resumeId, data).then(resp=>{
       console.log(resp);
       setLoading(false)
       toast('Details updated !')

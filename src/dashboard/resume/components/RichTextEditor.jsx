@@ -18,7 +18,7 @@ function RichTextEditor({onRichTextEditorChange , index , defaultValue }) {
 
     const GenerateSummeryFromAI=async ()=>{
        
-        if(!resumeInfo?.experience[index]?.title){
+        if(!resumeInfo?.attributes?.experience[index]?.title){
             toast("Please Add Position Title")
             return;
             
@@ -26,7 +26,7 @@ function RichTextEditor({onRichTextEditorChange , index , defaultValue }) {
 
         
     setLoading(true)
-    const prompt=PROMPT.replace('{positionTitle}' , resumeInfo.experience[index].title);
+    const prompt=PROMPT.replace('{positionTitle}' , resumeInfo?.attributes?.experience[index].title);
      
     const result=await  AIChatSession.sendMessage(prompt);
     console.log(result.response.text());

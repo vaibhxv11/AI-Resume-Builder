@@ -17,11 +17,14 @@ function Summary({enableNext}) {
     const [loading,setLoading]=useState(false);
     const params=useParams();
     const [aiGeneratedSummaryList,setAiGenerateSummaryList]=useState();
+
     useEffect(()=>{
-        summary&&setResumeInfo({
+        summary && setResumeInfo({
             ...resumeInfo,
             summary:summary
         })
+
+        
     },[summary])
 
     const GenerateSummaryFromAI=async()=>{

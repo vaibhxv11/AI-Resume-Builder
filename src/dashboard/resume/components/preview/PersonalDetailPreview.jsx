@@ -5,33 +5,33 @@ function PersonalDetailPreview({resumeInfo}) {
     <div>
         <h2 className='font-bold text-xl text-center '
            style={{
-            color:resumeInfo?.themeColor
-           }}   >{resumeInfo?.firstName} {resumeInfo?.lastName}</h2>
-        <h2 className='text-center text-sm font-medium  '>  {resumeInfo?.jobTitle}</h2>
+            color:resumeInfo?.attributes?.themeColor
+           }}   >{resumeInfo?.attributes?.firstName} {resumeInfo?.attributes?.lastName}</h2>
+        <h2 className='text-center text-sm font-medium  '>  {resumeInfo?.attributes?.jobTitle}</h2>
         <h2 className='text-center font-normal text-xs'
          style={{
-            color:resumeInfo?.themeColor
-           }} >{resumeInfo?.address }</h2>
+            color:resumeInfo?.attributes?.themeColor
+           }} >{resumeInfo?.attributes?.address }</h2>
 
 
            <div className='flex justify-between'>
             <h2 className='font-normal text-xs '
              style={{
-                color:resumeInfo?.themeColor
+                color:resumeInfo?.attributes?.themeColor
                }}  >
-                {resumeInfo?.phone}
+                {resumeInfo?.attributes?.phone}
             </h2>
             <h2 className='font-normal text-xs '
              style={{
-                color:resumeInfo?.themeColor
+                color:resumeInfo?.attributes?.themeColor
                }} >
-                {resumeInfo?.email}
+                {resumeInfo?.attributes?.email}
             </h2>
            </div>
 
            <hr className='border-[1.5px] my-2' 
             style={{
-                borderColor:resumeInfo?.themeColor
+                borderColor:resumeInfo?.attributes?.themeColor
                }} />
 
 
