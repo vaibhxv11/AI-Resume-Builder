@@ -199,7 +199,7 @@ function Summary({ enableNext }) {
                 </div>
             </form>
 
-            {aiGeneratedSummaryList && <div className='my-5'>
+            {aiGeneratedSummaryList.length > 0 && <div className='my-5'>
                 <h2 className='font-bold text-lg'>Suggestions</h2>
                 {aiGeneratedSummaryList.map((item, index) => (
                     <div key={index} onClick={() => setSummary(item?.summary)}
