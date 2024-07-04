@@ -30,7 +30,7 @@ function ViewResume() {
     }
 
   return (
-    <ResumeInfoContext.Provider value={{resumeInfo,setResumeInfo}} >
+    <ResumeInfoContext.Provider value={{resumeInfo , setResumeInfo}} >
         <div id="no-print">
         <Header/>
 
@@ -64,4 +64,4 @@ function ViewResume() {
   )
 }
 
-export default ViewResume
+export default ViewResume;

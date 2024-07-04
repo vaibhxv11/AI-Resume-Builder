@@ -8,6 +8,7 @@ import SkillsPreview from './preview/SkillsPreview'
 function ResumePreview() {
 
     const {resumeInfo , setResumeInfo}=useContext(ResumeInfoContext)
+    
     useEffect(()=>{
       console.log("resumeInfo is:" ,resumeInfo)
     })

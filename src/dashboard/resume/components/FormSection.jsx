@@ -34,7 +34,9 @@ function FormSection() {
         </div>
 
         {/* Personal Detail */}
-       {activeFormIndex==1 ?  <PersonalDetail  enableNext={(v)=>setEnableNext(v)}/>
+       {activeFormIndex==1 ?  <PersonalDetail  enableNext={(v)=>setEnableNext(v)}      />
+
+
        : activeFormIndex==2 ? <Summary  enableNext={(v)=>setEnableNext(v)}/> 
        : activeFormIndex==3 ? <Experience   enableNext={(v)=>setEnableNext(v)} /> : 
        activeFormIndex==4 ? <Education />  
